@@ -1,0 +1,324 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;800&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/*--------------------*/
+/*
+h1 {
+   font-size: 60px;
+}
+h1 {
+   font-size: calc(32px + 28 *(100vw / 1280));
+}
+
+@media (max-width: 767px) {
+   h1 {
+      font-size: calc(32px + (28+28*0.7) *((100vw - 320px) / 1280));
+   }
+}
+
+1. От размера шрифта по макету отнимает минимальное значение шрифта (которое хорошо отолбражается на мобилке)
+2. Прибавляем минимальный размер и разницу
+3. умножаю на ширину вьюпорта деленую на ширину всего макета
+*/
+.block {
+  overflow: hidden;
+  background: url("https://images.unsplash.com/photo-1666396251085-4bf5b2a7fca7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80")
+    50% / cover no-repeat;
+  position: relative;
+}
+.block::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0.6;
+}
+.block__container {
+  position: relative;
+  z-index: 40;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+.block__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  -webkit-transition: all 1s linear;
+  -o-transition: all 1s linear;
+  transition: all 1s linear;
+}
+.block__inner {
+  text-align: center;
+  color: #fff;
+}
+.block__title {
+  font-size: 56px;
+  margin-bottom: 40px;
+  text-shadow: 2px 2px 2px 2px #333;
+}
+.block__start a {
+  color: #fff;
+  font-size: 24px;
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  display: inline-block;
+}
+.block__start a::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 3px;
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  background-color: yellow;
+  margin-top: 2px;
+}
+.block__start a:hover {
+  -webkit-transform: scale(1.2, 1.2);
+  -ms-transform: scale(1.2, 1.2);
+  transform: scale(1.2, 1.2);
+  color: yellow;
+  text-shadow: 0px 1px 1px yellow;
+}
+.block__start a:hover::after {
+  width: 100%;
+}
+
+.block--up {
+  margin-top: -100vh;
+}
+
+.block__times {
+  text-align: center;
+  color: #fff;
+}
+
+.block__chenge {
+  font-size: 56px;
+  margin-bottom: 60px;
+}
+
+.block__time {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-column-gap: 50px;
+  column-gap: 50px;
+}
+
+.time-block {
+  color: #fff;
+  font-size: 30px;
+  border: 1px solid #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  background-color: inherit;
+}
+.time-block:hover {
+  background-color: #000;
+  color: yellow;
+  border-color: #000;
+  -webkit-transform: translate(0, -7px);
+  -ms-transform: translate(0, -7px);
+  transform: translate(0, -7px);
+}
+
+.block__num {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.block__board {
+  width: 500px;
+  height: 500px;
+  background-color: #1d1d1d;
+  border-radius: 15px;
+  opacity: 0.9;
+}
+
+.remainder-time {
+  display: inline-block;
+}
+
+.board-block {
+  position: relative;
+}
+.board-block__circle {
+  position: absolute;
+  border-radius: 50%;
+  -webkit-box-shadow: 1px 1px 1px black;
+  box-shadow: 1px 1px 1px black;
+  cursor: pointer;
+}
+
+.your-score {
+  color: #fff;
+  font-size: 44px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.new-game {
+  color: #fff;
+  font-size: 24px;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+  background-color: inherit;
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+.new-game:hover {
+  color: yellow;
+}
+
+body {
+  height: 100%;
+  font-family: "Mulish", sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 100%;
+}
+
+.page {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+.container {
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
